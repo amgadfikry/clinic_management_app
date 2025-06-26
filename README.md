@@ -45,7 +45,7 @@ The inspiration behind the project came from the challenges faced by me as a phy
 3. Install Docker and docker-compose if not installed
 4. Up the docker-compose file in the background
   ```docker compose up -d```
-5. Show logs of the container and make sure both front-end and back-end services are running
+5. Show logs of the container and make sure both front-end and backend services are running
   ```docker compose logs -f```
 
 ## Usage

@@ -1,0 +1,18 @@
+# docker-compose.dev.yml -> ./docker-compose.dev.yml
+volumes:
+  mysqldb_dev: {}
+
+services:
+  server:
+    env_file:
+      - ./backend/env/.env
+      - ./backend/env/dev.env
+    ports:
+      - 5000:5000
+    command: python3 -m app --debug
+
+  mysql:
+    env_file:
+      - ./backend/env/dev.env
+    volumes:
+      - mysqldb_dev:/var/lib/mysql

@@ -1,0 +1,10 @@
+# Ignore Python compiled bytecode files
+*.pyc
+
+# Ignore Python cache directories
+__pycache__/
+
+
+*.log
+
+*.env

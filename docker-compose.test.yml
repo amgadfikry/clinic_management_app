@@ -1,0 +1,21 @@
+# docker-compose.test.yml -> docker_compose/docker-compose.test.yml
+volumes:
+  mysqldb_test: {}
+
+services:
+  server:
+    environment:
+      - PYTHONPATH=/app
+    env_file:
+      - ./backend/env/.env
+      - ./backend/env/test.env
+    ports:
+      - 8000
+    restart: no
+    command: pytest tests/ -v
+
+  mysql:
+    env_file:
+      - ./backend/env/test.env
+    volumes:
+      - mysqldb_test:/var/lib/mysql
